@@ -1,21 +1,26 @@
 
+public class TransferTrasnsaction {
+    
+}
 package fintech.model;
 
-public class TransferTransaction extends Transaction {
+public class TransferTransaction {
+    private final int id;
+    private final String accountOwner;
+    private final double amount;
+    private final String timestamp;
+    private final String note;
 
-    private String receiver;
-
-    public TransferTransaction(int id, String username, String receiver, double amount, String timestamp, String description) {
-        super(id, username, amount, timestamp, description);
-        this.receiver = receiver;
+    public TransferTransaction(int _id, String _accountOwner, double _amount, String _timestamp, String _note) {
+        this.id = _id;
+        this.accountOwner = _accountOwner;
+        this.amount = _amount;
+        this.timestamp = _timestamp;
+        this.note = _note;
     }
 
-    public String getType() {
-        return "transfer";
-    }
-
+    @Override
     public String getReceiver() {
-        return receiver;
+        return String.format("receiver", id, accountOwner, amount, timestamp, note);
     }
-
 }

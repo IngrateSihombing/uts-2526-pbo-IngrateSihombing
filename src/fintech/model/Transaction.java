@@ -1,22 +1,27 @@
-
+public class transaksi {
+    
+}
 package fintech.model;
 
-public abstract class Transaction {
+public class Transaction {
+    private final int id;
+    private final String accountOwner;
+    private final double amount;
+    private final String timestamp;
+    private final String note;
 
-    protected int id;
-    protected String username;
-    protected double amount;
-    protected String timestamp;
-    protected String description;
-
-    public Transaction(int id, String username, double amount, String timestamp, String description) {
-        this.id = id;
-        this.username = username;
-        this.amount = amount;
-        this.timestamp = timestamp;
-        this.description = description;
+    public Transaction(int _id, String _accountOwner, double _amount, String _timestamp, String _note) {
+        this.id = _id;
+        this.accountOwner = _accountOwner;
+        this.amount = _amount;
+        this.timestamp = _timestamp;
+        this.note = _note;
     }
 
-    public abstract String getType();
+    public double getAmount() { return amount; }
 
+    @Override
+    public String toString() {
+        return String.format("%d|%s|%.1f|%s|%s", id, accountOwner, amount, timestamp, note);
+    }
 }
