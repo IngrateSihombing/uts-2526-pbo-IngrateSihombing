@@ -1,2 +1,3 @@
 saya sedikit mengerti menyelesaikan program pada java
 tetapi saya kurang mengerti untuk pembuatan class dalam java
+saya
